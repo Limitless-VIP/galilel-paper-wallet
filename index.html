@@ -1,0 +1,400 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML lang="en">
+<HEAD>
+  <META charset="utf-8">
+  <META name="author" content="Maik Broemme">
+  <META name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <META name="description" content="Galilel Paper Wallet - It is an offline wallet, regarded as cold storage">
+  <META name="keywords" content="Galilel, Paper, Wallet, Bitcoin, DASH, PIVX, Ethereum, Digital Money, Crypto Currency">
+
+  <!-- Properties -->
+  <META property="og:url" content="https://paper.galilel.cloud">
+  <META property="og:title" content="Galilel Paper Wallet">
+  <META property="og:site_name" content="Galilel Core">
+  <META property="og:description" content="Galilel Paper Wallet - It is an offline wallet, regarded as cold storage">
+  <META property="og:type" content="website">
+
+  <!-- Icons -->
+  <LINK rel="apple-touch-icon" type="image/png" href="/build/apple-icon-57x57.png">
+  <LINK rel="apple-touch-icon" type="image/png" sizes="72x72" href="/build/apple-icon-72x72.png">
+  <LINK rel="apple-touch-icon" type="image/png" sizes="114x114" href="/build/apple-icon-114x114.png">
+  <LINK rel="icon" type="image/png" href="/build/ms-icon-144x144.png">
+
+  <!-- CDN files. -->
+  <LINK rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+  <!-- Local files. -->
+  <LINK rel="stylesheet" href="css/main.css">
+  <LINK rel="stylesheet" href="css/print.css" media="print">
+
+  <!-- Compiled and minified JavaScript -->
+  <SCRIPT src="https://code.jquery.com/jquery-3.3.1.min.js"></SCRIPT>
+  <SCRIPT src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></SCRIPT>
+  <SCRIPT src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></SCRIPT>
+  <SCRIPT src="js/main.js"></SCRIPT>
+
+  <!-- Favicon -->
+  <LINK rel="shortcut icon" href="images/favicon.ico">
+
+  <!-- Website title -->
+  <TITLE id="page-title">Galilel Paper Wallet</TITLE>
+</HEAD>
+<BODY>
+  <DIV class="container-fluid">
+
+    <!-- Header -->
+    <DIV class="row header">
+      <DIV class="col-1 offset-4">
+        <IMG class="header-logo" width="140" height="140" src="images/logo.svg" alt="Galilel">
+      </DIV>
+      <DIV class="col-3">
+        <H2 class="header-title">PAPER WALLET GENERATOR 1.0</H2>
+      </DIV>
+    </DIV>
+
+    <!-- Description -->
+    <DIV id="generate-tab">
+
+      <!-- Explanation -->
+      <DIV class="row info no-print">
+        <DIV class="col-8 offset-2 text-center py-5">
+          <H2>What you need to know</H2>
+          <P>
+            None of the generated keys are ever broadcast over the internet. It is recommended that you run it locally on your computer instead of generating the keys directly on the site. For the extra paranoid; you can run the generator and print the wallets using a secure offline environment and correctly wipe the environment and printer memory after use.
+          </P>
+          <DIV class="py-1">
+            <DIV class="row py-2">
+              <DIV class="col">
+                <A class="btn-main float-center" id="decrypt-tab-btn">Decrypt</A>
+                <A href="https://github.com/Galilel-Project/galilel-paper-wallet/releases" target="#" class="btn-alternate float-center">Download the Generator</A>
+              </DIV>
+            </DIV>
+          </DIV>
+        </DIV>
+      </DIV>
+
+      <!-- Inputs -->
+      <DIV class="row py-5 no-print">
+        <DIV class="col-8 offset-2 text-center">
+          <DIV class="form-inline">
+            <LABEL class="sr-only" for="number-option">How many wallets do you want to create?</LABEL>
+            <SELECT id="number-option" class="form-control mb-2 mr-sm-2">
+              <OPTION value="1">1</OPTION>
+              <OPTION value="2">2</OPTION>
+              <OPTION value="3">3</OPTION>
+              <OPTION value="4">4</OPTION>
+            </SELECT>
+
+            <LABEL class="sr-only" for="color-option">What color scheme would you like to use?</LABEL>
+            <SELECT id="color-option" class="form-control mb-2 mr-sm-2">
+              <OPTION value="FULL_COLOR">Full Color</OPTION>
+              <OPTION value="BLACK_WHITE">Black &amp; White</OPTION>
+            </SELECT>
+
+            <LABEL class="sr-only" for="password">BIP38 Password (Optional)</LABEL>
+            <INPUT class="form-control form-input mb-2 mr-sm-2" id="password" placeholder="BIP38 Password (Optional)" maxlength="32">
+
+            <LABEL class="sr-only" for="generate">Generate Wallets</LABEL>
+            <BUTTON id="generate" class="btn-main btn-print mb-2 mr-sm-2">Generate Wallets</BUTTON>
+
+            <LABEL class="sr-only" for="print">Print</LABEL>
+            <BUTTON id="print" class="btn-main btn-print mb-2 mr-sm-2">Print</BUTTON>
+
+            <LABEL class="sr-only" for="reset">Reset</LABEL>
+            <BUTTON id="reset" class="btn-main btn-print mb-2 mr-sm-2">Reset</BUTTON>
+          </DIV>
+        </DIV>
+      </DIV>
+
+      <!-- Description -->
+      <DIV class="row no-print">
+        <DIV class="col-8 offset-2" id="guide">
+          <P>You can generate up to 4 which will fit onto 2 pieces of horizontal A4 paper.</P>
+          <P>Ideally we suggest you print double sided. If you do not wish to, you can either print them seperately and affix them, or disregard the back sides entirely.</P>
+          <P>Encrypting the private keys with a BIP38 password is recommended, but optional.</P>
+          <P>Encrypting can take some time to complete, so please be patient.</P>
+          <P>The password you set will be used for all generated wallets.</P>
+          <P>This password can not be recovered, so do not lose it! It is recommended that you test decrypting the private key before sending coins to it to check nothing went wrong during encrytion.</P>
+        </DIV>
+      </DIV>
+
+      <!-- Wallets -->
+      <DIV class="container">
+
+        <!-- Wallet 1 - Frontside -->
+        <DIV id="wallet-0" class="wallet-container">
+          <H3 class="paper-title" id="paper-title-0">Paper Wallet 1</H3>
+          <DIV class="paper-wallet" id="paper-wallet-0">
+            <IMG class="paper-background" id="paper-background-0" src="images/paper-wallet-color.svg">
+            <DIV id="pubkey-string-0" class="pubkey-string"></DIV>
+            <DIV id="pubkey-string-0-invert" class="pubkey-string-invert"></DIV>
+            <DIV id="pubkey-qr-0" class="pubkey-qr"></DIV>
+            <DIV id="privkey-string-0" class="privkey-string"></DIV>
+            <DIV id="privkey-string-0-invert" class="privkey-string-invert"></DIV>
+            <DIV id="privkey-qr-0" class="privkey-qr"></DIV>
+          </DIV>
+          <DIV class="pt-output" id="plain-text-0">
+            <H4>Plain Text Address Info</H4>
+            <TABLE>
+              <TR>
+                <TD class="row-key">Public Key</TD>
+                <TD id="public-key-0"></TD>
+              </TR>
+              <TR>
+                <TD class="row-key">Private Key</TD>
+                <TD id="private-key-0"></TD>
+              </TR>
+              <TR class="pt-encrypted" id="pt-encrypted-0">
+                <TD class="row-key">Encrypted Key</TD>
+                <TD id="encrypted-key-0"></TD>
+              </TR>
+              <TR class="pt-password" id="pt-password-0">
+                <TD class="row-key">BIP38 Password&nbsp;&nbsp;&nbsp;</TD>
+                <TD id="password-0"></TD>
+              </TR>
+            </TABLE>
+          </DIV>
+          <BUTTON class="btn-print no-print" id="decrypt-tab-0">Test Encryption</BUTTON>
+        </DIV>
+
+        <!-- Wallet 2 - Frontside -->
+        <DIV id="wallet-1" class="wallet-container">
+          <H3 class="paper-title" id="paper-title-1">Paper Wallet 2</H3>
+          <DIV class="paper-wallet" id="paper-wallet-1">
+            <IMG class="paper-background" id="paper-background-1" src="images/paper-wallet-color.svg">
+            <DIV id="pubkey-string-1" class="pubkey-string"></DIV>
+            <DIV id="pubkey-string-1-invert" class="pubkey-string-invert"></DIV>
+            <DIV id="pubkey-qr-1" class="pubkey-qr"></DIV>
+            <DIV id="privkey-string-1" class="privkey-string"></DIV>
+            <DIV id="privkey-string-1-invert" class="privkey-string-invert"></DIV>
+            <DIV id="privkey-qr-1" class="privkey-qr"></DIV>
+          </DIV>
+          <DIV class="pt-output" id="plain-text-1">
+            <H4>Plain Text Address Info</H4>
+            <TABLE>
+              <TR>
+                <TD class="row-key">Public Key</TD>
+                <TD id="public-key-1"></TD>
+              </TR>
+              <TR>
+                <TD class="row-key">Private Key</TD>
+                <TD id="private-key-1"></TD>
+              </TR>
+              <TR class="pt-encrypted" id="pt-encrypted-1">
+                <TD class="row-key">Encrypted Key</TD>
+                <TD id="encrypted-key-1"></TD>
+              </TR>
+              <TR class="pt-password" id="pt-password-1">
+                <TD class="row-key">BIP38 Password&nbsp;&nbsp;&nbsp;</TD>
+                <TD id="password-1"></TD>
+              </TR>
+            </TABLE>
+          </DIV>
+          <BUTTON class="btn-print no-print" id="decrypt-tab-1">Test Encryption</BUTTON>
+        </DIV>
+
+        <!-- Disable page title on print -->
+        <DIV id="frontsides-container">
+          <DIV id="frontsides-container-marker"></DIV>
+          <DIV id="frontsides">
+
+            <!-- Wallet 3 - Frontside -->
+            <DIV id="wallet-2" class="wallet-container">
+              <H3 class="paper-title" id="paper-title-2">Paper Wallet 3</H3>
+              <DIV class="paper-wallet" id="paper-wallet-2">
+                <IMG class="paper-background" id="paper-background-2" src="images/paper-wallet-color.svg">
+                <DIV id="pubkey-string-2" class="pubkey-string"></DIV>
+                <DIV id="pubkey-string-2-invert" class="pubkey-string-invert"></DIV>
+                <DIV id="pubkey-qr-2" class="pubkey-qr"></DIV>
+                <DIV id="privkey-string-2" class="privkey-string"></DIV>
+                <DIV id="privkey-string-2-invert" class="privkey-string-invert"></DIV>
+                <DIV id="privkey-qr-2" class="privkey-qr"></DIV>
+              </DIV>
+              <DIV class="pt-output" id="plain-text-2">
+                <H4>Plain Text Address Info</H4>
+                <TABLE>
+                  <TR>
+                    <TD class="row-key">Public Key</TD>
+                    <TD id="public-key-2"></TD>
+                  </TR>
+                  <TR>
+                    <TD class="row-key">Private Key</TD>
+                    <TD id="private-key-2"></TD>
+                  </TR>
+                  <TR class="pt-encrypted" id="pt-encrypted-2">
+                    <TD class="row-key">Encrypted Key</TD>
+                    <TD id="encrypted-key-2"></TD>
+                  </TR>
+                  <TR class="pt-password" id="pt-password-2">
+                    <TD class="row-key">BIP38 Password&nbsp;&nbsp;&nbsp;</TD>
+                    <TD id="password-2"></TD>
+                  </TR>
+                </TABLE>
+              </DIV>
+              <BUTTON class="btn-print no-print" id="decrypt-tab-2">Test Encryption</BUTTON>
+            </DIV>
+
+            <!-- Wallet 4 - Frontside -->
+            <DIV id="wallet-3" class="wallet-container">
+              <H3 class="paper-title" id="paper-title-3">Paper Wallet 4</H3>
+              <DIV class="paper-wallet" id="paper-wallet-3">
+                <IMG class="paper-background" id="paper-background-3" src="images/paper-wallet-color.svg">
+                <DIV id="pubkey-string-3" class="pubkey-string"></DIV>
+                <DIV id="pubkey-string-3-invert" class="pubkey-string-invert"></DIV>
+                <DIV id="pubkey-qr-3" class="pubkey-qr"></DIV>
+                <DIV id="privkey-string-3" class="privkey-string"></DIV>
+                <DIV id="privkey-string-3-invert" class="privkey-string-invert"></DIV>
+                <DIV id="privkey-qr-3" class="privkey-qr"></DIV>
+              </DIV>
+              <DIV class="pt-output" id="plain-text-3">
+                <H4>Plain Text Address Info</H4>
+                <TABLE>
+                  <TR>
+                    <TD class="row-key">Public Key</TD>
+                    <TD id="public-key-3"></TD>
+                  </TR>
+                  <TR>
+                    <TD class="row-key">Private Key</TD>
+                    <TD id="private-key-3"></TD>
+                  </TR>
+                  <TR class="pt-encrypted" id="pt-encrypted-3">
+                    <TD class="row-key">Encrypted Key</TD>
+                    <TD id="encrypted-key-3"></TD>
+                  </TR>
+                  <TR class="pt-password" id="pt-password-3">
+                    <TD class="row-key">BIP38 Password&nbsp;&nbsp;&nbsp;</TD>
+                    <TD id="password-3"></TD>
+                  </TR>
+                </TABLE>
+              </DIV>
+              <BUTTON class="btn-print no-print" id="decrypt-tab-3">Test Encryption</BUTTON>
+            </DIV>
+          </DIV>
+        </DIV>
+      </DIV>
+
+      <!-- Wallet 1 - Backside -->
+      <DIV class="wallet-container">
+        <DIV class="paper-wallet" id="wallet-backside-0">
+          <IMG class="paper-backside" id="paper-backside-0" src="images/paper-wallet-color-back.svg">
+        </DIV>
+      </DIV>
+
+      <!-- Wallet 2 - Backside -->
+      <DIV class="wallet-container">
+        <DIV class="paper-wallet" id="wallet-backside-1">
+          <IMG class="paper-backside" id="paper-backside-1" src="images/paper-wallet-color-back.svg">
+        </DIV>
+      </DIV>
+
+      <!-- Disable page title on print -->
+      <DIV id="frontsides-placeholder-container">
+        <DIV id="frontsides-placeholder"></DIV>
+      </DIV>
+
+      <!-- Wallet 3 - Backside -->
+      <DIV class="wallet-container">
+        <DIV class="paper-wallet" id="wallet-backside-2">
+          <IMG class="paper-backside" id="paper-backside-2" src="images/paper-wallet-color-back.svg">
+        </DIV>
+      </DIV>
+
+      <!-- Wallet 4 - Backside -->
+      <DIV class="wallet-container">
+        <DIV class="paper-wallet" id="wallet-backside-3">
+          <IMG class="paper-backside" id="paper-backside-3" src="images/paper-wallet-color-back.svg">
+        </DIV>
+      </DIV>
+
+    </DIV>
+
+    <!-- Description -->
+    <DIV id="decrypt-tab" style="display:none;">
+      <DIV class="row info">
+        <DIV class="col-8 offset-2 text-center py-5">
+          <H2>Decrypt your private key</H2>
+          <P>If you have encrypted your private key with the BIP38 option, you can reveal the wallet import format private key here. If the encryption worked correctly, the private key here should match the private key displayed on the generator page.</P>
+          <DIV class="row py-2">
+            <DIV class="col">
+              <BUTTON class="btn-main float-center" id="generate-tab-btn">Generate</BUTTON>
+            </DIV>
+          </DIV>
+        </DIV>
+      </DIV>
+
+      <!-- Explanation -->
+      <DIV class="row">
+        <DIV class="col-8 offset-2 text-center py-4">
+          Please enter your BIP38 password and the encrypted key to decrypt.
+        </DIV>
+      </DIV>
+
+      <!-- Inputs -->
+      <DIV class="row">
+        <DIV class="col-8 offset-2 text-center">
+          <DIV class="form-inline">
+            <LABEL class="sr-only" for="decrypt_password">BIP38 Password</LABEL>
+            <INPUT id="decrypt_password" class="form-control mb-2 mr-sm-2" placeholder="BIP38 Password" maxlength="32">
+
+            <LABEL class="sr-only" for="encrypted">Encrypted Key</LABEL>
+            <INPUT id="encrypted" class="form-control mb-2 mr-sm-2" placeholder="Encrypted Key">
+
+            <LABEL class="sr-only" for="decrypt">Decrypt</LABEL>
+            <BUTTON id="decrypt" class="mb-2 mr-sm-2 btn-print">Decrypt</BUTTON>
+
+            <LABEL class="sr-only" for="reset_decrypt">Reset</label>
+            <BUTTON id="reset_decrypt" class="mb-2 mr-sm-2 btn-print">Reset</BUTTON>
+          </DIV>
+        </DIV>
+      </DIV>
+
+      <!-- Outputs -->
+      <DIV class="row">
+        <DIV class="col-8 offset-2 py-4">
+          <DIV class="pt-output" id="plain-text-d" style="margin-top: 20px;">
+            <H4>Decrypted Address Info</H4>
+            <TABLE>
+              <TR>
+                <TD class="row-key">Public Key</TD>
+                <TD id="public-key-d"></TD>
+              </TR>
+              <TR>
+                <TD class="row-key">Private Key</TD>
+                <TD id="private-key-d"></TD>
+              </TR>
+              <TR>
+                <TD class="row-key">Encrypted Key</TD>
+                <TD id="encrypted-key-d"></TD>
+              </TR>
+              <TR>
+                <TD class="row-key">BIP38 Password&nbsp;&nbsp;&nbsp;</TD>
+                <TD id="password-d"></TD>
+              </TR>
+            </TABLE>
+          </DIV>
+        </DIV>
+      </DIV>
+    </DIV>
+
+    <!-- Footer -->
+    <DIV class="row footer py-4">
+      <DIV class="col text-center">
+        <P class="normal-height">Brought to you by the <A href="https://galilel.cloud" target="">Galilel</A> team</P>
+        <P class="terms">By using this software you agree that Galilel is not responsible for any loss or damages caused by using this sofware and that you use it at your own risk.</P>
+      </DIV>
+    </DIV>
+
+  </DIV>
+
+  <!-- Decrypting -->
+  <DIV id="overlay" style="display: none">
+    <DIV id="loader">
+      <DIV class="loadercontent">
+        <DIV class="loading"></DIV>
+        <H3 id="overlay-text">Decrypting Keys ...</H3>
+        <P id="overlay-sub">Please be patient, this can take a while.</P>
+      </DIV>
+    </DIV>
+  </DIV>
+</BODY>
+</HTML>
