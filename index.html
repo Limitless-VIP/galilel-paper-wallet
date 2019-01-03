@@ -309,7 +309,7 @@
     </DIV>
 
     <!-- Description -->
-    <DIV id="decrypt-tab" style="display:none;">
+    <DIV id="decrypt-tab" style="display: none;">
       <DIV class="row info">
         <DIV class="col-8 offset-2 text-center py-5">
           <H2>Decrypt your private key</H2>
@@ -343,15 +343,15 @@
             <BUTTON id="decrypt" class="mb-2 mr-sm-2 btn-print">Decrypt</BUTTON>
 
             <LABEL class="sr-only" for="reset_decrypt">Reset</label>
-            <BUTTON id="reset_decrypt" class="mb-2 mr-sm-2 btn-print">Reset</BUTTON>
+            <BUTTON id="reset_decrypt" class="mb-2 mr-sm-2 btn-print" style="display: none">Reset</BUTTON>
           </DIV>
         </DIV>
       </DIV>
 
       <!-- Outputs -->
-      <DIV class="row">
+      <DIV class="row" id="plain-text-d" style="display: none">
         <DIV class="col-8 offset-2 py-4">
-          <DIV class="pt-output" id="plain-text-d" style="margin-top: 20px;">
+          <DIV class="pt-output" style="margin-top: 20px;">
             <H4>Decrypted Address Info</H4>
             <TABLE>
               <TR>
@@ -391,7 +391,7 @@
     <DIV id="loader">
       <DIV class="loadercontent">
         <DIV class="loading"></DIV>
-        <H3 id="overlay-text">Decrypting Keys ...</H3>
+        <H3 id="overlay-text">Decrypting Keys...</H3>
         <P id="overlay-sub">Please be patient, this can take a while.</P>
       </DIV>
     </DIV>

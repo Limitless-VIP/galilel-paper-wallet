@@ -244,9 +244,10 @@
       document.getElementById("encrypted-key-d").innerHTML = '';
       document.getElementById("private-key-d").innerHTML = '';
       document.getElementById("password-d").innerHTML = '';
-      document.getElementById("plain-text-decrypt").style.display = 'none';
+      document.getElementById("plain-text-d").style.display = 'none';
       document.getElementById('reset_decrypt').style.display = 'none';
     }
+
     window.onload = function() {
       if (document.getElementById('generate')) document.getElementById('generate').onclick = generate;
       if (document.getElementById('print')) document.getElementById('print').onclick = print;

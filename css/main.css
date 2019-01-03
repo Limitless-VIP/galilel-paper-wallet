@@ -116,6 +116,14 @@ a:hover {
   border-radius: .25rem;
 }
 
+.form-control:focus {
+  color: #495057;
+  background-color: #ffffff;
+  border-color: #795548;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(47.5, 33.3, 28.2, 0.25);
+}
+
 .normal-height {
   line-height: 0;
 }
