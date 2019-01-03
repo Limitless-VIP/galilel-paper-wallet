@@ -38,9 +38,9 @@
      inkscape:window-height="813"
      id="namedview8139"
      showgrid="false"
-     inkscape:zoom="1.3123795"
-     inkscape:cx="411.70838"
-     inkscape:cy="144.23807"
+     inkscape:zoom="0.92799244"
+     inkscape:cx="316.71865"
+     inkscape:cy="167.37148"
      inkscape:window-x="136"
      inkscape:window-y="76"
      inkscape:window-maximized="0"
@@ -2211,26 +2211,26 @@
     <filter
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Greyscale"
-       id="filter29538">
+       id="filter13921">
       <feColorMatrix
          values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
-         id="feColorMatrix29536" />
+         id="feColorMatrix13919" />
     </filter>
     <filter
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Greyscale"
-       id="filter29542">
+       id="filter13925">
       <feColorMatrix
          values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
-         id="feColorMatrix29540" />
+         id="feColorMatrix13923" />
     </filter>
     <filter
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Greyscale"
-       id="filter29546">
+       id="filter13929">
       <feColorMatrix
          values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
-         id="feColorMatrix29544" />
+         id="feColorMatrix13927" />
     </filter>
   </defs>
   <title
@@ -2246,7 +2246,7 @@
          data-name="Layer 1">
         <g
            id="back"
-           style="filter:url(#filter29538)">
+           style="filter:url(#filter13921)">
           <polyline
              class="cls-5"
              points="782.81 232.99 777.13 239.78 776.05 240.85 775.99 240.91"
@@ -3481,7 +3481,7 @@
         </g>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#4c4c4c;fill-opacity:1;stroke:none;filter:url(#filter29542)"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#4c4c4c;fill-opacity:1;stroke:none;filter:url(#filter13925)"
            x="163.64685"
            y="144.69576"
            id="text4671"><tspan
@@ -3492,7 +3492,7 @@
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.33333397px;font-family:Astrolab;-inkscape-font-specification:'Astrolab, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#4c4c4c;fill-opacity:1">GALILEL</tspan></text>
         <g
            transform="matrix(0.0055218,0,0,0.0055218,79.629759,98.67281)"
-           style="fill:#795548;stroke:none;filter:url(#filter29546)"
+           style="fill:#795548;stroke:none;filter:url(#filter13929)"
            id="layer101">
           <path
              inkscape:connector-curvature="0"
