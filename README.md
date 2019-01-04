@@ -31,11 +31,11 @@ npm start
 ```
 npm install
 electron-packager . Galilel-Paper-Wallet --overwrite --platform=darwin --arch=x64 --icon=build/icon.icns --prune=true --out=release-builds
-electron-packager . Galilel-Paper-Wallet --overwrite --asar=true --platform=linux --arch=ia32 --icon=build/android-icon-192x192.png --prune=true --out=release-builds
-electron-packager . Galilel-Paper-Wallet --overwrite --asar=true --platform=linux --arch=x64 --icon=build/android-icon-192x192.png --prune=true --out=release-builds
-electron-packager . Galilel-Paper-Wallet --overwrite --asar=true --platform=linux --arch=arm64 --icon=build/android-icon-192x192.png --prune=true --out=release-builds
-electron-packager . Galilel-Paper-Wallet --overwrite --asar=true --platform=win32 --arch=ia32 --icon=build/icon.ico --prune=true --out=release-builds --version-string.CompanyName=Galilel-Cryptocurrency --version-string.FileDescription=Galilel-Paper-Wallet --version-string.ProductName=Galilel-Paper-Wallet
-electron-packager . Galilel-Paper-Wallet --overwrite --asar=true --platform=win32 --arch=x64 --icon=build/icon.ico --prune=true --out=release-builds --version-string.CompanyName=Galilel-Cryptocurrency --version-string.FileDescription=Galilel-Paper-Wallet --version-string.ProductName=Galilel-Paper-Wallet
+electron-packager . Galilel-Paper-Wallet --overwrite --asar --platform=linux --arch=ia32 --icon=build/android-icon-192x192.png --prune=true --out=release-builds
+electron-packager . Galilel-Paper-Wallet --overwrite --asar --platform=linux --arch=x64 --icon=build/android-icon-192x192.png --prune=true --out=release-builds
+electron-packager . Galilel-Paper-Wallet --overwrite --asar --platform=linux --arch=arm64 --icon=build/android-icon-192x192.png --prune=true --out=release-builds
+electron-packager . Galilel-Paper-Wallet --overwrite --asar --platform=win32 --arch=ia32 --icon=build/icon-128x128.ico --prune=true --out=release-builds --version-string.CompanyName=Galilel-Cryptocurrency --version-string.FileDescription=Galilel-Paper-Wallet --version-string.ProductName=Galilel-Paper-Wallet
+electron-packager . Galilel-Paper-Wallet --overwrite --asar --platform=win32 --arch=x64 --icon=build/icon-128x128.ico --prune=true --out=release-builds --version-string.CompanyName=Galilel-Cryptocurrency --version-string.FileDescription=Galilel-Paper-Wallet --version-string.ProductName=Galilel-Paper-Wallet
 ```
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/)
