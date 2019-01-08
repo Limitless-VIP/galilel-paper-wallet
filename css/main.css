@@ -39,19 +39,37 @@ a:hover {
   padding: 0;
 }
 
-.header-title {
-  font-weight: bold;
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  padding: 0 10px;
+  border: 1px solid #cccccc;
+}
+
+.header {
+  width: 620px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 100;
+}
+
+.header h2 {
   line-height: 50px;
   display: inline-block;
-  margin: 20px 0 20px 20px;
-  font-size: 15px;
+  margin: 12px 20px;
+  padding: 0;
+  top: 0;
+  font-weight: bold;
 }
 
 .header-logo {
   height: 50px;
-  margin: 20px 0;
+  margin: 10px 0;
   display: inline-block;
-
+  float: left;
 }
 
 .info {
@@ -126,6 +144,17 @@ a:hover {
 
 .normal-height {
   line-height: 0;
+}
+
+.pt-output {
+  background-color: #EEE;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 1.8;
+}
+
+.row-key {
+  font-weight: bold;
 }
 
 .terms {
