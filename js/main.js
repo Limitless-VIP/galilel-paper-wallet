@@ -213,7 +213,7 @@
           var decryptedKey = bip38.decrypt(encryptedKey, password, function(status) {
             console.log('decrypting', Math.round(status.percent), '%');
           });
-          var decodedDecrypted = wif.encode(212, decryptedKey.privateKey, decryptedKey.compressed);
+          var decodedDecrypted = wif.encode(193, decryptedKey.privateKey, decryptedKey.compressed);
           var key = CoinKey.fromWif(decodedDecrypted, version);
           document.getElementById("public-key-d").innerHTML = key.publicAddress;
           document.getElementById("encrypted-key-d").innerHTML = encryptedKey;
