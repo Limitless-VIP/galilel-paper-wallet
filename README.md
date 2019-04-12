@@ -1,5 +1,7 @@
 # Introduction
 
+![](doc/img/paper_wallet.jpg)
+
 Galilel Paper Wallet - It is an offline wallet, regarded as cold storage. It is
 recommended that you run it locally on your computer instead of generating the
 keys directly on the site. For the extra paranoid; you can run the generator
