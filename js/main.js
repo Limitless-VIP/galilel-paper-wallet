@@ -1,6 +1,6 @@
 //// Config
 
-// 1. Create favicons with -> https://www.favicon-generator.org/ and the 128x128 ico with http://www.favicon.pro/de/
+// 1. Create favicons with -> https://www.favicon-generator.org/ and the 128x128 ico with https://icoconvert.com/
 // 2. Download the favicon and replace all file in build folder
 // 3. Copy past favicon.ico and ms-icon-144x144.png to images folder and replace // Rename ms-icon-144x144.png to logo.png
 // 4. Go to https://anyconv.com/icns-converter/ and upload the coin logo in size 1000px x 1000px and download the icns file.
