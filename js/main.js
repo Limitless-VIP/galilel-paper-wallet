@@ -20,6 +20,7 @@ var configcoinstring = 32;
 var configqrcodegenerator = 73;
 var configsecurerandom = 82;
 var configwif = 91;
+var configbipdecryption = 193;
 
 // Colors
 var configColorLight = "#bca389";
@@ -257,7 +258,7 @@ var configDownloadGeneratorLink = "https://github.com/Galilel-Project/galilel-pa
           var decryptedKey = bip38.decrypt(encryptedKey, password, function(status) {
             console.log('decrypting', Math.round(status.percent), '%');
           });
-          var decodedDecrypted = wif.encode(193, decryptedKey.privateKey, decryptedKey.compressed);
+          var decodedDecrypted = wif.encode(configbipdecryption, decryptedKey.privateKey, decryptedKey.compressed);
           var key = CoinKey.fromWif(decodedDecrypted, version);
           document.getElementById("public-key-d").innerHTML = key.publicAddress;
           document.getElementById("encrypted-key-d").innerHTML = encryptedKey;
