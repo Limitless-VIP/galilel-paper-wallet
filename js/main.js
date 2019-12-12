@@ -6,6 +6,7 @@
 // 4. Go to https://anyconv.com/icns-converter/ and upload the coin logo in size 1000px x 1000px and download the icns file.
 // 5. Replace the file icon.icns in the build folder with the created icns file.
 // 6. Open index.html and change meta tag content.
+// 7. open main.css file and change the colors on the bottom of the file.
 
 // Coin
 var configCoinName = "Galilel";
@@ -21,10 +22,6 @@ var configqrcodegenerator = 73;
 var configsecurerandom = 82;
 var configwif = 91;
 var configbipdecryption = 193;
-
-// Colors
-var configColorLight = "#bca389";
-var configColorDark = "#795548";
 
 // Paper wallet template
 var configTemplateQuareSVG = "paper-wallet-square.svg";

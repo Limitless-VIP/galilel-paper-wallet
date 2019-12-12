@@ -481,3 +481,22 @@ h3{
     width:100%!important;
   }
 }
+
+/* Set colors */
+
+.btn-main,.btn-alternate,btn-print{
+  color:white!important;
+  border:none!important;
+}
+
+a{
+  color:#795548!important;
+}
+
+.btn-main,.btn-alternate,.btn-print{
+  background-color:#795548!important;
+}
+
+.info{
+  background-color:#bca389!important;
+}
