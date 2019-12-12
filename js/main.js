@@ -1,3 +1,43 @@
+//// Config
+
+// 1. Create favicons with -> https://www.favicon-generator.org/
+// 2. Download the favicon and replace all file in build folder
+// 3. Copy past favicon.ico and ms-icon-144x144.png to images folder and replace // Rename ms-icon-144x144.png to logo.png
+// 4. Go to https://anyconv.com/icns-converter/ and upload the coin logo in site 1000px x 1000px and download the icns file.
+// 5. Replace the file icon.icns in the build folder with the created icns file.
+// 6. Open index.html and change meta tag content.
+
+// Coin
+var configCoinName = "Galilel";
+var configCoinDomain = "https://galilel.org";
+var configAddressPrivate = 0xc1;
+var configAddressPublic = 0x44;
+var coinutil = 31;
+var configbip38 = 7;
+var configbs58 = 26;
+var configcoinkey = 30;
+var configcoinstring = 32;
+var configqrcodegenerator = 73;
+var configsecurerandom = 82;
+var configwif = 91;
+
+// Colors
+var configColorLight = "#bca389";
+var configColorDark = "#795548";
+
+// Paper wallet template
+var configTemplateQuareSVG = "paper-wallet-square.svg";
+var configTemplateQuareSVGBack = "paper-wallet-square-back.svg";
+var configTemplateCleanSVG = "paper-wallet-clean.svg";
+var configTemplateCleanSVGBack = "paper-wallet-clean-back.svg";
+
+// Set page title
+document.title = configCoinName+' Paper Wallet';
+
+// Download generator link
+var configDownloadGeneratorEnabled = true;
+var configDownloadGeneratorLink = "https://github.com/Galilel-Project/galilel-paper-wallet/releases";
+
 (function e(t, n, r) {
   function s(o, u) {
     if (!n[o]) {
@@ -67,8 +107,8 @@
         return
       }
       var version = {
-        private: 0xc1,
-        public: 0x44
+        private: configAddressPrivate,
+        public: configAddressPublic
       }
       var bytes = secureRandom.randomBuffer(32)
       var key = new CoinKey(bytes, version)
@@ -100,20 +140,24 @@
       qrPub.addData(key.publicAddress);
       qrPub.make();
       document.getElementById('pubkey-qr-' + index).innerHTML = qrPub.createImgTag(4, 8);
+      var qrWeb = qrcode(typeNumber, errorCorrectionLevel);
+      qrWeb.addData(configCoinDomain);
+      qrWeb.make();
+      document.getElementById('website-qr-' + index).innerHTML = qrWeb.createImgTag(4, 8);
       var qrPriv = qrcode(typeNumber, errorCorrectionLevel);
       qrPriv.addData(privateKey);
       qrPriv.make();
       document.getElementById('privkey-qr-' + index).innerHTML = qrPriv.createImgTag(4, 8);
       document.getElementById('wallet-' + index).style.display = 'block'
       document.getElementById('wallet-backside-' + index).style.display = 'block'
-      if (colorOption === 'BLACK_WHITE') {
+      if (colorOption === 'CLEAN') {
         document.getElementById('paper-wallet-' + index).style.color = '#000'
-        document.getElementById('paper-background-' + index).setAttribute('src', 'images/paper-wallet-bw.svg')
-        document.getElementById('paper-backside-' + index).setAttribute('src', 'images/paper-wallet-bw-back.svg')
+        document.getElementById('paper-background-' + index).setAttribute('src', 'images/'+configTemplateCleanSVG)
+        document.getElementById('paper-backside-' + index).setAttribute('src', 'images/'+configTemplateCleanSVGBack)
       } else {
         document.getElementById('paper-wallet-' + index).style.color = '#FFF'
-        document.getElementById('paper-background-' + index).setAttribute('src', 'images/paper-wallet-color.svg')
-        document.getElementById('paper-backside-' + index).setAttribute('src', 'images/paper-wallet-color-back.svg')
+        document.getElementById('paper-background-' + index).setAttribute('src', 'images/'+configTemplateQuareSVG)
+        document.getElementById('paper-backside-' + index).setAttribute('src', 'images/'+configTemplateQuareSVGBack)
       }
       document.getElementById("overlay").style.display = 'none';
     }
@@ -173,7 +217,7 @@
       }
     }
     window.onafterprint = function() {
-      document.getElementById('page-title').innerHTML = 'Galilel Paper Wallet';
+      document.getElementById('page-title').innerHTML = configCoinName+' Paper Wallet';
       insertAfter(document.getElementById('frontsides'), document.getElementById('frontsides-container-marker'));
       var transient = document.getElementsByClassName('transient');
       while (transient[0]) {
@@ -201,8 +245,8 @@
 
     function decrypt() {
       var version = {
-        private: 0xc1,
-        public: 0x44
+        private: configAddressPrivate,
+        public: configAddressPublic
       }
       var password = document.getElementById("decrypt_password").value;
       var encryptedKey = document.getElementById("encrypted").value;
@@ -262,14 +306,14 @@
       if (document.getElementById('decrypt-tab-3')) document.getElementById('decrypt-tab-3').onclick = showDecrypt;
     }
   }, {
-    "../node_modules/coinkey/lib/util": 31,
-    "bip38": 7,
-    "bs58": 26,
-    "coinkey": 30,
-    "coinstring": 32,
-    "qrcode-generator": 73,
-    "secure-random": 82,
-    "wif": 91
+    "../node_modules/coinkey/lib/util": coinutil,
+    "bip38": configbip38,
+    "bs58": configbs58,
+    "coinkey": configcoinkey,
+    "coinstring": configcoinstring,
+    "qrcode-generator": configqrcodegenerator,
+    "secure-random": configsecurerandom,
+    "wif": configwif
   }],
   2: [function(require, module, exports) {
     (function(Buffer) {

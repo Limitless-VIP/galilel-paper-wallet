@@ -5,7 +5,7 @@
   <META name="author" content="Maik Broemme">
   <META name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <META name="description" content="Galilel Paper Wallet - It is an offline wallet, regarded as cold storage">
-  <META name="keywords" content="Galilel, Paper, Wallet, Bitcoin, DASH, PIVX, Ethereum, Digital Money, Crypto Currency">
+  <META name="keywords" content="Galilel, Paper, Wallet, Digital Money, Crypto Currency">
 
   <!-- Properties -->
   <META property="og:url" content="https://paper.galilel.org">
@@ -14,11 +14,26 @@
   <META property="og:description" content="Galilel Paper Wallet - It is an offline wallet, regarded as cold storage">
   <META property="og:type" content="website">
 
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet">
+
   <!-- Icons -->
-  <LINK rel="apple-touch-icon" type="image/png" href="/build/apple-icon-57x57.png">
-  <LINK rel="apple-touch-icon" type="image/png" sizes="72x72" href="/build/apple-icon-72x72.png">
-  <LINK rel="apple-touch-icon" type="image/png" sizes="114x114" href="/build/apple-icon-114x114.png">
-  <LINK rel="icon" type="image/png" href="/build/ms-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="build/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="build/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="build/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="build/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="build/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="build/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="build/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="build/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="build/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="build/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="build/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="build/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="build/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="build/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
   <!-- CDN files. -->
   <LINK rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
@@ -37,16 +52,15 @@
   <LINK rel="shortcut icon" href="images/favicon.ico">
 
   <!-- Website title -->
-  <TITLE id="page-title">Galilel Paper Wallet</TITLE>
+  <TITLE id="page-title">Paper Wallet</TITLE>
 </HEAD>
 <BODY>
   <DIV class="container-fluid">
 
     <!-- Header -->
     <DIV class="header">
-      <DIV class="text-center">
-        <IMG class="header-logo" src="images/logo.svg" alt="Galilel">
-        <H2>Galilel Paper Wallet Generator</H2><SPAN>v1.0.1</SPAN>
+        <script>document.write('<a href="/"><img id="logo" src="images/logo.png" alt="'+configCoinName+' Logo"/></a>');</script><br>
+        <H2><script>document.write(configCoinName);</script> Paper Wallet Generator</H2>
       </DIV>
     </DIV>
 
@@ -64,7 +78,11 @@
             <DIV class="row py-2">
               <DIV class="col">
                 <A class="btn-main float-center" id="decrypt-tab-btn">Decrypt</A>
-                <A href="https://github.com/Galilel-Project/galilel-paper-wallet/releases" target="#" class="btn-alternate float-center">Download the Generator</A>
+                <script>
+                  if(configDownloadGeneratorEnabled && configDownloadGeneratorLink !== ""){
+                    document.write('<A href="'+configDownloadGeneratorLink+'" target="#" class="btn-alternate float-center" style="text-decoration:none">Download the Generator</A>');
+                  }
+                </script>
               </DIV>
             </DIV>
           </DIV>
@@ -72,49 +90,53 @@
       </DIV>
 
       <!-- Inputs -->
-      <DIV class="row py-5 no-print">
-        <DIV class="col-8 offset-2 text-center">
-          <DIV class="form-inline">
-            <LABEL class="sr-only" for="number-option">How many wallets do you want to create?</LABEL>
-            <SELECT id="number-option" class="form-control mb-2 mr-sm-2">
-              <OPTION value="1">1</OPTION>
-              <OPTION value="2">2</OPTION>
-              <OPTION value="3">3</OPTION>
-              <OPTION value="4">4</OPTION>
-            </SELECT>
+      <div class="container no-print">
+        <DIV class="row py-5">
+          <DIV class="col-12 text-center">
+            <DIV class="form-inline">
+              <LABEL class="sr-only" for="number-option">How many wallets do you want to create?</LABEL>
+              <SELECT id="number-option" class="form-control mb-2 mr-sm-2">
+                <OPTION value="1">1</OPTION>
+                <OPTION value="2">2</OPTION>
+                <OPTION value="3">3</OPTION>
+                <OPTION value="4">4</OPTION>
+              </SELECT>
 
-            <LABEL class="sr-only" for="color-option">What color scheme would you like to use?</LABEL>
-            <SELECT id="color-option" class="form-control mb-2 mr-sm-2">
-              <OPTION value="FULL_COLOR">Full Color</OPTION>
-              <OPTION value="BLACK_WHITE">Black &amp; White</OPTION>
-            </SELECT>
+              <LABEL class="sr-only" for="color-option">What color scheme would you like to use?</LABEL>
+              <SELECT id="color-option" class="form-control mb-2 mr-sm-2">
+                <OPTION value="SQUARE">Square</OPTION>
+                <OPTION value="CLEAN">Clean</OPTION>
+              </SELECT>
 
-            <LABEL class="sr-only" for="password">BIP38 Password (Optional)</LABEL>
-            <INPUT class="form-control form-input mb-2 mr-sm-2" id="password" placeholder="BIP38 Password (Optional)" maxlength="32">
+              <LABEL class="sr-only" for="password">BIP38 Password (Optional)</LABEL>
+              <INPUT class="form-control form-input mb-2 mr-sm-2" id="password" placeholder="BIP38 Password (Optional)" maxlength="32">
 
-            <LABEL class="sr-only" for="generate">Generate Wallets</LABEL>
-            <BUTTON id="generate" class="btn-main btn-print mb-2 mr-sm-2">Generate Wallets</BUTTON>
+              <LABEL class="sr-only" for="generate">Generate Wallets</LABEL>
+              <BUTTON id="generate" class="btn-main btn-print mb-2 mr-sm-2">Generate Wallets</BUTTON>
 
-            <LABEL class="sr-only" for="print">Print</LABEL>
-            <BUTTON id="print" class="btn-main btn-print mb-2 mr-sm-2">Print</BUTTON>
+              <LABEL class="sr-only" for="print">Print</LABEL>
+              <BUTTON id="print" class="btn-main btn-print mb-2 mr-sm-2">Print</BUTTON>
 
-            <LABEL class="sr-only" for="reset">Reset</LABEL>
-            <BUTTON id="reset" class="btn-main btn-print mb-2 mr-sm-2">Reset</BUTTON>
+              <LABEL class="sr-only" for="reset">Reset</LABEL>
+              <BUTTON id="reset" class="btn-main btn-print mb-2 mr-sm-2">Reset</BUTTON>
+            </DIV>
           </DIV>
         </DIV>
-      </DIV>
+      </div>
 
       <!-- Description -->
-      <DIV class="row no-print">
-        <DIV class="col-8 offset-2" id="guide">
-          <P>You can generate up to 4 which will fit onto 2 pieces of horizontal A4 paper.</P>
-          <P>Ideally we suggest you print double sided. If you do not wish to, you can either print them seperately and affix them, or disregard the back sides entirely.</P>
-          <P>Encrypting the private keys with a BIP38 password is recommended, but optional.</P>
-          <P>Encrypting can take some time to complete, so please be patient.</P>
-          <P>The password you set will be used for all generated wallets.</P>
-          <P>This password can not be recovered, so do not lose it! It is recommended that you test decrypting the private key before sending coins to it to check nothing went wrong during encrytion.</P>
+      <div class="container no-print">
+        <DIV class="row">
+          <DIV class="col-12" id="guide">
+            <P>You can generate up to 4 which will fit onto 2 pieces of horizontal A4 paper.</P>
+            <P>Ideally we suggest you print double sided. If you do not wish to, you can either print them seperately and affix them, or disregard the back sides entirely.</P>
+            <P>Encrypting the private keys with a BIP38 password is recommended, but optional.</P>
+            <P>Encrypting can take some time to complete, so please be patient.</P>
+            <P>The password you set will be used for all generated wallets.</P>
+            <P>This password can not be recovered, so do not lose it! It is recommended that you test decrypting the private key before sending coins to it to check nothing went wrong during encrytion.</P>
+          </DIV>
         </DIV>
-      </DIV>
+      </div>
 
       <!-- Wallets -->
       <DIV class="container">
@@ -123,10 +145,12 @@
         <DIV id="wallet-0" class="wallet-container">
           <H3 class="paper-title" id="paper-title-0">Paper Wallet 1</H3>
           <DIV class="paper-wallet" id="paper-wallet-0">
-            <IMG class="paper-background" id="paper-background-0" src="images/paper-wallet-color.svg">
+            <script>document.write('<IMG class="paper-background" id="paper-background-0" src="images/'+configTemplateQuareSVG+'">');</script>
             <DIV id="pubkey-string-0" class="pubkey-string"></DIV>
             <DIV id="pubkey-string-0-invert" class="pubkey-string-invert"></DIV>
+            <DIV id="coin-logo-0" class="coin-logo"><script>document.write('<img src="images/logo.png" alt="'+configCoinName+' Logo"/>');</script></DIV>
             <DIV id="pubkey-qr-0" class="pubkey-qr"></DIV>
+            <DIV id="website-qr-0" class="website-qr"></DIV>
             <DIV id="privkey-string-0" class="privkey-string"></DIV>
             <DIV id="privkey-string-0-invert" class="privkey-string-invert"></DIV>
             <DIV id="privkey-qr-0" class="privkey-qr"></DIV>
@@ -159,10 +183,12 @@
         <DIV id="wallet-1" class="wallet-container">
           <H3 class="paper-title" id="paper-title-1">Paper Wallet 2</H3>
           <DIV class="paper-wallet" id="paper-wallet-1">
-            <IMG class="paper-background" id="paper-background-1" src="images/paper-wallet-color.svg">
+            <script>document.write('<IMG class="paper-background" id="paper-background-1" src="images/'+configTemplateQuareSVG+'">');</script>
             <DIV id="pubkey-string-1" class="pubkey-string"></DIV>
             <DIV id="pubkey-string-1-invert" class="pubkey-string-invert"></DIV>
+            <DIV id="coin-logo-1" class="coin-logo"><script>document.write('<img src="images/logo.png" alt="'+configCoinName+' Logo"/>');</script></DIV>
             <DIV id="pubkey-qr-1" class="pubkey-qr"></DIV>
+            <DIV id="website-qr-1" class="website-qr"></DIV>
             <DIV id="privkey-string-1" class="privkey-string"></DIV>
             <DIV id="privkey-string-1-invert" class="privkey-string-invert"></DIV>
             <DIV id="privkey-qr-1" class="privkey-qr"></DIV>
@@ -200,10 +226,12 @@
             <DIV id="wallet-2" class="wallet-container">
               <H3 class="paper-title" id="paper-title-2">Paper Wallet 3</H3>
               <DIV class="paper-wallet" id="paper-wallet-2">
-                <IMG class="paper-background" id="paper-background-2" src="images/paper-wallet-color.svg">
+                <script>document.write('<IMG class="paper-background" id="paper-background-2" src="images/'+configTemplateQuareSVG+'">');</script>
                 <DIV id="pubkey-string-2" class="pubkey-string"></DIV>
                 <DIV id="pubkey-string-2-invert" class="pubkey-string-invert"></DIV>
+                <DIV id="coin-logo-2" class="coin-logo"><script>document.write('<img src="images/logo.png" alt="'+configCoinName+' Logo"/>');</script></DIV>
                 <DIV id="pubkey-qr-2" class="pubkey-qr"></DIV>
+                <DIV id="website-qr-2" class="website-qr"></DIV>
                 <DIV id="privkey-string-2" class="privkey-string"></DIV>
                 <DIV id="privkey-string-2-invert" class="privkey-string-invert"></DIV>
                 <DIV id="privkey-qr-2" class="privkey-qr"></DIV>
@@ -236,10 +264,12 @@
             <DIV id="wallet-3" class="wallet-container">
               <H3 class="paper-title" id="paper-title-3">Paper Wallet 4</H3>
               <DIV class="paper-wallet" id="paper-wallet-3">
-                <IMG class="paper-background" id="paper-background-3" src="images/paper-wallet-color.svg">
+                <script>document.write('<IMG class="paper-background" id="paper-background-3" src="images/'+configTemplateQuareSVG+'">');</script>
                 <DIV id="pubkey-string-3" class="pubkey-string"></DIV>
                 <DIV id="pubkey-string-3-invert" class="pubkey-string-invert"></DIV>
+                <DIV id="coin-logo-3" class="coin-logo"><script>document.write('<img src="images/logo.png" alt="'+configCoinName+' Logo"/>');</script></DIV>
                 <DIV id="pubkey-qr-3" class="pubkey-qr"></DIV>
+                <DIV id="website-qr-3" class="website-qr"></DIV>
                 <DIV id="privkey-string-3" class="privkey-string"></DIV>
                 <DIV id="privkey-string-3-invert" class="privkey-string-invert"></DIV>
                 <DIV id="privkey-qr-3" class="privkey-qr"></DIV>
@@ -274,14 +304,14 @@
       <!-- Wallet 1 - Backside -->
       <DIV class="wallet-container">
         <DIV class="paper-wallet" id="wallet-backside-0">
-          <IMG class="paper-backside" id="paper-backside-0" src="images/paper-wallet-color-back.svg">
+          <script>document.write('<IMG class="paper-backside" id="paper-backside-0" src="images/'+configTemplateQuareSVGBack+'">');</script>
         </DIV>
       </DIV>
 
       <!-- Wallet 2 - Backside -->
       <DIV class="wallet-container">
         <DIV class="paper-wallet" id="wallet-backside-1">
-          <IMG class="paper-backside" id="paper-backside-1" src="images/paper-wallet-color-back.svg">
+          <script>document.write('<IMG class="paper-backside" id="paper-backside-1" src="images/'+configTemplateQuareSVGBack+'">');</script>
         </DIV>
       </DIV>
 
@@ -293,14 +323,14 @@
       <!-- Wallet 3 - Backside -->
       <DIV class="wallet-container">
         <DIV class="paper-wallet" id="wallet-backside-2">
-          <IMG class="paper-backside" id="paper-backside-2" src="images/paper-wallet-color-back.svg">
+          <script>document.write('<IMG class="paper-backside" id="paper-backside-2" src="images/'+configTemplateQuareSVGBack+'">');</script>
         </DIV>
       </DIV>
 
       <!-- Wallet 4 - Backside -->
       <DIV class="wallet-container">
         <DIV class="paper-wallet" id="wallet-backside-3">
-          <IMG class="paper-backside" id="paper-backside-3" src="images/paper-wallet-color-back.svg">
+          <script>document.write('<IMG class="paper-backside" id="paper-backside-3" src="images/'+configTemplateQuareSVGBack+'">');</script>
         </DIV>
       </DIV>
 
@@ -377,8 +407,8 @@
     <!-- Footer -->
     <DIV class="row footer py-4">
       <DIV class="col text-center">
-        <P class="normal-height">Brought to you by the <A href="https://galilel.org" target="">Galilel</A> team</P>
-        <P class="terms">By using this software you agree that Galilel is not responsible for any loss or damages caused by using this sofware and that you use it at your own risk.</P>
+        <P class="normal-height">Brought to you by the <script>document.write('<A href="'+configCoinDomain+'" target="">'+configCoinName+'</A>');</script> team</P>
+        <P class="terms">By using this software you agree that <script>document.write(configCoinName);</script> is not responsible for any loss or damages caused by using this sofware and that you use it at your own risk.</P>
       </DIV>
     </DIV>
 
@@ -394,5 +424,20 @@
       </DIV>
     </DIV>
   </DIV>
+  <script>
+    $(function() {
+      $('a').css('color', configColorDark);
+      $('.info').css('background-color', configColorLight);
+      $('.btn-main').css('background-color', configColorDark);
+      $('.btn-main').css('color', 'white');
+      $('.btn-main').css('border', 'none');
+      $('.btn-alternate').css('background-color', configColorDark);
+      $('.btn-alternate').css('color', 'white');
+      $('.btn-alternate').css('border', 'none');
+      $('.btn-print').css('background-color', configColorDark);
+      $('.btn-print').css('color', 'white');
+      $('.btn-print').css('border', 'none');
+    });
+  </script>
 </BODY>
 </HTML>

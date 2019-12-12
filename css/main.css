@@ -15,7 +15,7 @@
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   background-color: #ffffff;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -23,14 +23,16 @@ body {
 }
 
 a {
-  color: #bba38a;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #795548;
   text-decoration: underline;
+}
+
+p{
+  margin-bottom: 5px;
 }
 
 .container-fluid {
@@ -48,7 +50,8 @@ td {
 }
 
 .header {
-  width: 620px;
+  width: 100%;
+  text-align:center;
   margin: 0 auto;
   position: relative;
   z-index: 100;
@@ -63,15 +66,13 @@ td {
   font-weight: bold;
 }
 
-.header-logo {
-  height: 50px;
-  margin: 10px 0;
+#logo {
+  width:80px;
+  margin-top:20px;
   display: inline-block;
-  float: left;
 }
 
 .info {
-  background-color: #bba38a;
   color: #ffffff;
   font-size: 20px;
   font-weight: 300;
@@ -79,9 +80,9 @@ td {
 }
 
 .info h2 {
+  text-transform: uppercase;
   font-size: 25px;
   margin-bottom: 20px;
-  font-weight: 700;
 }
 
 .info .inner {
@@ -94,50 +95,47 @@ td {
 
 .btn-main {
   background-color: transparent;
-  color: #ffffff;
-  font-weight: bold;
-  border: 1px solid rgba(255, 255, 255,1);
   padding: 0.8em 1em;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 24px;
   cursor: pointer;
   text-align: center;
   display: inline-block;
-  text-decoration: none !important;
   transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   border-radius: 0.25rem;
+  text-transform:uppercase;
+  text-decoration:none;
 }
 
 .btn-alternate {
   background-color: transparent;
-  color: #ffffff;
-  font-weight: bold;
-  border: 1px solid #795548;
   padding: 0.8em 1em;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 24px;
   cursor: pointer;
   text-align: center;
   display: inline-block;
-  text-decoration: none !important;
   transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   border-radius: 0.25rem;
+  text-transform:uppercase;
+  text-decoration:none;
+  margin-top: .5rem!important;
 }
 
 .btn-print {
-  background: transparent;
-  color: #795548;
-  border: 1px solid #795548;
-  padding: .375rem .75rem;
-  border-radius: .25rem;
+  padding: 0.5em 1em;
+  font-size: 12px;
+  line-height: 24px;
+  border-radius: 0.25rem;
+  text-transform:uppercase;
+  text-decoration:none;
+  margin-right: .5rem!important;
 }
 
 .form-control:focus {
-  color: #495057;
-  background-color: #ffffff;
-  border-color: #795548;
+  border-color: #989898;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(47.5, 33.3, 28.2, 0.25);
+  box-shadow: none
 }
 
 .normal-height {
@@ -156,7 +154,10 @@ td {
 }
 
 .terms {
+  margin-top:10px;
   font-size: 10px;
+  line-height:1.2em;
+  padding:20px;
 }
 
 #print,
@@ -175,12 +176,11 @@ td {
   z-index: 1001;
   width: 400px;
   height: 150px;
-  border: 1px solid #bba38a;
+  border: 1px solid #bcbcbc;
   border-radius: 5px;
   overflow: hidden;
   display: inline-block;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
-  background-color: #bba38a;
+  background-color: #bcbcbc;
 }
 
 #loader img {
@@ -190,10 +190,15 @@ td {
   border-radius: 5px;
 }
 
+h3{
+  margin-left:10px;
+}
+
 #loader h3 {
   margin-top: 20px;
   text-align: center;
   color: #ffffff;
+  margin-left:0px;
 }
 
 #overlay {
@@ -241,25 +246,25 @@ td {
 }
 
 .pubkey-string {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: black;
   font-weight: bold;
   position: absolute;
-  top: 42px;
-  left: 26px;
-  width: 280px;
+  top: 45px;
+  left: 37px;
+  width: 447px;
   text-align: center;
   letter-spacing: 0.5px;
 }
 
 .pubkey-string-invert {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: black;
   font-weight: bold;
   position: absolute;
-  bottom: 43px;
-  left: 26px;
-  width: 280px;
+  bottom: 48px;
+  left: 37px;
+  width: 447px;
   text-align: center;
   letter-spacing: 0.5px;
   -webkit-transform: rotate(-180deg);
@@ -272,30 +277,30 @@ td {
 
 .pubkey-qr {
   position: absolute;
-  top: 101px;
-  left: 69px;
+  top: 102px;
+  left: 83px;
 }
 
 .privkey-string {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: black;
   font-weight: bold;
   position: absolute;
-  top: 58px;
-  right: 18px;
-  width: 441px;
+  top: 45px;
+  right: 36px;
+  width: 447px;
   text-align: center;
   letter-spacing: 0.5px;
 }
 
 .privkey-string-invert {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: black;
   font-weight: bold;
   position: absolute;
-  bottom: 59px;
-  right: 18px;
-  width: 441px;
+  bottom: 48px;
+  right: 36px;
+  width: 447px;
   text-align: center;
   letter-spacing: 0.5px;
   -webkit-transform: rotate(-180deg);
@@ -306,11 +311,26 @@ td {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 }
 
+.coin-logo {
+  position: absolute;
+  top: 117px;
+  left: 314px;
+}
+
+.coin-logo img{
+  width:120px;
+}
+
+.website-qr {
+  position: absolute;
+  top: 102px;
+  right: 298px;
+}
 
 .privkey-qr {
   position: absolute;
-  top: 101px;
-  right: 49px;
+  top: 102px;
+  right: 82px;
 }
 
 .terms {
@@ -356,12 +376,12 @@ td {
 }
 
 #overlay-text {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
 }
 
 .loadercontent {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 #decrypt-tab-btn:hover {
@@ -371,12 +391,6 @@ td {
 
 #genny {
   padding-bottom: 0px!important;
-}
-
-.btn-print:hover {
-  background: #795548;
-  border: 1px solid #ffffff;
-  color: #ffffff;
 }
 
 .btn-alternate:hover {
@@ -394,35 +408,39 @@ td {
 }
 
 #guide {
-  padding-bottom: 20px
+  padding: 20px;
+  background-color:rgb(237, 237, 237);
+  border-radius:10px;
+  margin-bottom:45px;
 }
 
 #plain-text-0 {
   padding: 15px;
   background-color: whitesmoke;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 #plain-text-1 {
   padding: 15px;
   background-color: whitesmoke;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 #plain-text-2 {
   padding: 15px;
   background-color: whitesmoke;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 #plain-text-3 {
   padding: 15px;
   background-color: whitesmoke;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 #decrypt_password {
-  width: 30%
+  width: 30%;
+  margin-right: .5rem!important;
 }
 
 #encrypted {
@@ -451,4 +469,10 @@ td {
 
 #decrypt-tab-3 {
   margin-top: 20px
+}
+
+@media(max-width:768px){
+  .form-inline input, .form-inline select{
+    width:100%!important;
+  }
 }
