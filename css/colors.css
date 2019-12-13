@@ -1,0 +1,16 @@
+html,body{
+    background-color:white
+}
+
+a, a:hover, a:visited, a:active{
+    color:#795548;
+}
+
+.btn-main, .btn-alternate, .btn-print{
+    background-color:#795548!important;
+    color:white!important;
+}
+
+.info{
+    background-color:#bca389!important;
+}

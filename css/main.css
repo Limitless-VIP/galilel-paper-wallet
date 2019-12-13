@@ -16,7 +16,6 @@
 html,
 body {
   font-family: 'Ubuntu', sans-serif;
-  background-color: #ffffff;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   z-index: 100;
@@ -36,8 +35,8 @@ p{
 }
 
 .row{
-  margin-left:0!important;
-  margin-right:0!important;
+  margin-left:0;
+  margin-right:0;
 }
 
 .container-fluid {
@@ -110,6 +109,7 @@ td {
   border-radius: 0.25rem;
   text-transform:uppercase;
   text-decoration:none;
+  border:none;
 }
 
 .btn-alternate {
@@ -124,7 +124,8 @@ td {
   border-radius: 0.25rem;
   text-transform:uppercase;
   text-decoration:none;
-  margin-top: .5rem!important;
+  margin-top: .5rem;
+  border:none;
 }
 
 .btn-print {
@@ -134,7 +135,8 @@ td {
   border-radius: 0.25rem;
   text-transform:uppercase;
   text-decoration:none;
-  margin-right: .5rem!important;
+  margin-right: .5rem;
+  border:none;
 }
 
 .form-control:focus {
@@ -360,7 +362,7 @@ h3{
 }
 
 .input-large {
-  width: 520px !important;
+  width: 520px;
 }
 
 .loading {
@@ -395,7 +397,7 @@ h3{
 }
 
 #genny {
-  padding-bottom: 0px!important;
+  padding-bottom: 0px;
 }
 
 .btn-alternate:hover {
@@ -445,7 +447,7 @@ h3{
 
 #decrypt_password {
   width: 30%;
-  margin-right: .5rem!important;
+  margin-right: .5rem;
 }
 
 #encrypted {
@@ -480,23 +482,4 @@ h3{
   .form-inline input, .form-inline select{
     width:100%!important;
   }
-}
-
-/* Set colors */
-
-.btn-main,.btn-alternate,btn-print{
-  color:white!important;
-  border:none!important;
-}
-
-a{
-  color:#795548!important;
-}
-
-.btn-main,.btn-alternate,.btn-print{
-  background-color:#795548!important;
-}
-
-.info{
-  background-color:#bca389!important;
 }
