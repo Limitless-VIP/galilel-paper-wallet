@@ -1,6 +1,7 @@
 // Copyright (c) 2017-2018 NavCoin Developers
 // Copyright (c) 2017-2018 Bulwark Developers
 // Copyright (c) 2019-2019 Galilel Developers
+// Copyright (c) 2019-2019 Limitless Developers
 
 // Electron main module.
 const electron = require('electron')
