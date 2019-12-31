@@ -1,6 +1,6 @@
 {
   "name": "Limitless-Paper-Wallet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A paper wallet generator with BIP38 password encryption for Galilel Cryptocurrency.",
   "main": "main.js",
   "build": {
