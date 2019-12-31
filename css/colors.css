@@ -1,16 +1,62 @@
-html,body{
-    background-color:white
+/* Make color adjustments here */
+
+html,body {
+    background-color:#ffffff;
+    color: #4a4a4a;
 }
 
-a, a:hover, a:visited, a:active{
+a, a:hover, a:visited, a:active, .form-control:focus {
     color:#795548;
 }
 
-.btn-main, .btn-alternate, .btn-print{
+.btn-main, .btn-alternate, .btn-print {
     background-color:#795548!important;
     color:white!important;
 }
 
-.info{
+.info {
+    color: #ffffff;
     background-color:#bca389!important;
+}
+
+.pt-output, #guide {
+    background-color: #EEE;
+    color: #4a4a4a;
+}
+
+.pubkey-string, .pubkey-string-invert, .privkey-string, .privkey-string-invert {
+    color: #4a4a4a;
+    background-color: #ffffff;
+}
+
+td {
+    border: 1px solid #cccccc;
+}
+
+/* Extended color adjustment options - not absolutely necessary */
+
+#loader {
+    border: 1px solid #bcbcbc;
+    background-color: #bcbcbc;
+}
+
+#loader h3 {
+    color: #ffffff;
+}
+
+#overlay {
+    background-color: rgba(255, 255, 255, 0.65);
+}
+
+#overlay-sub {
+    color: #ffffff;
+}
+
+.paper-wallet {
+    color: #ffffff;
+}
+
+.loading {
+    border: 0.25rem solid rgba(255, 255, 255, 0.2);
+    border-top-color: #ffffff;
 }
