@@ -10,8 +10,6 @@
 // Coin
 var configCoinName = "Limitless VIP";
 var configCoinDomain = "http://limitlessvip.co.za";
-var configMetaAutor = "Limitless VIP";
-var configMetaSiteName = "Limitless VIP";
 var configAddressPrivate = 0xef; // chainparams.cpp - SECRET_KEY - convert decimal to hex
 var configAddressPublic = 0x8b;  // chainparams.cpp - PUBKEY_ADDRESS - convert decimal to hex
 var coinutil = 31;
