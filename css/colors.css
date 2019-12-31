@@ -1,36 +1,37 @@
 /* Make color adjustments here */
 
 html,body {
-    background-color:#ffffff;
-    color: #4a4a4a;
+    background-color:#a6a8a7;
+    color: #242424;
 }
 
 a, a:hover, a:visited, a:active, .form-control:focus {
-    color:#795548;
+    color:#242424;
 }
 
 .btn-main, .btn-alternate, .btn-print {
-    background-color:#795548!important;
-    color:white!important;
+    background-color:#242424!important;
+    color:#a6a8a7!important;
+    border: 1px solid #a6a8a7!important;
 }
 
 .info {
-    color: #ffffff;
-    background-color:#bca389!important;
+    color: #a6a8a7;
+    background-color:#242424!important;
 }
 
 .pt-output, #guide {
-    background-color: #EEE;
-    color: #4a4a4a;
+    background-color: #ffffff;
+    color: #242424;
 }
 
 .pubkey-string, .pubkey-string-invert, .privkey-string, .privkey-string-invert {
-    color: #4a4a4a;
+    color: #242424;
     background-color: #ffffff;
 }
 
 td {
-    border: 1px solid #cccccc;
+    border: 1px solid #242424;
 }
 
 /* Extended color adjustment options - not absolutely necessary */
