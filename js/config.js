@@ -5,8 +5,7 @@
 // 3. Copy past favicon.ico and ms-icon-144x144.png to images folder and replace // Rename ms-icon-144x144.png to logo.png
 // 4. Go to https://anyconv.com/icns-converter/ and upload the coin logo in size 1000px x 1000px and download the icns file.
 // 5. Replace the file icon.icns in the build folder with the created icns file.
-// 6. Open index.html and change meta tag content.
-// 7. open main.css file and change the colors on the bottom of the file.
+// 6. open colors.css file and change the colors on the bottom of the file.
 
 // Coin
 var configCoinName = "Galilel";
