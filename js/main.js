@@ -11,6 +11,8 @@
 // Coin
 var configCoinName = "Galilel";
 var configCoinDomain = "https://galilel.org";
+var configMetaAutor = "Maik Broemme";
+var configMetaSiteName = "Galilel Core";
 var configAddressPrivate = 0xc1;
 var configAddressPublic = 0x44;
 var coinutil = 31;
@@ -31,10 +33,20 @@ var configTemplateCleanSVGBack = "paper-wallet-clean-back.svg";
 
 // Set page title
 document.title = configCoinName+' Paper Wallet';
-
+ 
 // Download generator link
 var configDownloadGeneratorEnabled = true;
 var configDownloadGeneratorLink = "https://github.com/Galilel-Project/galilel-paper-wallet/releases";
+
+// Set meta tags
+$("head").append("<meta name='author' content='"+configMetaAutor+"'>");
+$("head").append("<meta name='description' content='"+configCoinName+" Paper Wallet - It is an offline wallet, regarded as cold storage'>");
+$("head").append("<meta name='keywords' content='"+configCoinName+", Paper, Wallet, Digital Money, Crypto Currency'>");
+$("head").append("<meta name='og:url' content='"+configCoinDomain+"'>");
+$("head").append("<meta name='og:title' content='"+configCoinName+", Paper, Wallet, Digital Money, Crypto Currency'>");
+$("head").append("<meta name='og:site_name' content='"+configMetaSiteName+"'>");
+$("head").append("<meta name='og:description' content='"+configCoinName+" Paper Wallet - It is an offline wallet, regarded as cold storage'>");
+$("head").append("<meta name='og:type' content='website'>");
 
 (function e(t, n, r) {
   function s(o, u) {
