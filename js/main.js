@@ -1,13 +1,3 @@
-// Set meta tags
-$("head").append("<meta name='author' content='"+configMetaAutor+"'>");
-$("head").append("<meta name='description' content='"+configCoinName+" Paper Wallet - It is an offline wallet, regarded as cold storage'>");
-$("head").append("<meta name='keywords' content='"+configCoinName+", Paper, Wallet, Digital Money, Crypto Currency'>");
-$("head").append("<meta name='og:url' content='"+configCoinDomain+"'>");
-$("head").append("<meta name='og:title' content='"+configCoinName+", Paper, Wallet, Digital Money, Crypto Currency'>");
-$("head").append("<meta name='og:site_name' content='"+configMetaSiteName+"'>");
-$("head").append("<meta name='og:description' content='"+configCoinName+" Paper Wallet - It is an offline wallet, regarded as cold storage'>");
-$("head").append("<meta name='og:type' content='website'>");
-
 (function e(t, n, r) {
   function s(o, u) {
     if (!n[o]) {
