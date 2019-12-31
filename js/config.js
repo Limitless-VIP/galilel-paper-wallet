@@ -10,8 +10,8 @@
 // Coin
 var configCoinName = "Limitless VIP";
 var configCoinDomain = "http://limitlessvip.co.za";
-var configAddressPrivate = 0xef; // chainparams.cpp - SECRET_KEY - convert decimal to hex
-var configAddressPublic = 0x8b;  // chainparams.cpp - PUBKEY_ADDRESS - convert decimal to hex
+var configAddressPrivate = 0xc1; // chainparams.cpp - SECRET_KEY - convert decimal to hex
+var configAddressPublic = 0x41;  // chainparams.cpp - PUBKEY_ADDRESS - convert decimal to hex
 var coinutil = 31;
 var configbip38 = 7;
 var configbs58 = 26;
@@ -20,7 +20,7 @@ var configcoinstring = 32;
 var configqrcodegenerator = 73;
 var configsecurerandom = 82;
 var configwif = 91;
-var configbipdecryption = 239;   // chainparams.cpp - SECRET_KEY - as is
+var configbipdecryption = 193;   // chainparams.cpp - SECRET_KEY - as is
 
 // Paper wallet template
 var configTemplateQuareSVG = "paper-wallet-square.svg";
