@@ -223,7 +223,6 @@ h3{
 }
 
 .pubkey-string {
-  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   position: absolute;
   top: 45px;
@@ -234,7 +233,6 @@ h3{
 }
 
 .pubkey-string-invert {
-  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   position: absolute;
   bottom: 48px;
@@ -257,7 +255,6 @@ h3{
 }
 
 .privkey-string {
-  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   position: absolute;
   top: 45px;
@@ -268,7 +265,6 @@ h3{
 }
 
 .privkey-string-invert {
-  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   position: absolute;
   bottom: 48px;
@@ -347,12 +343,7 @@ h3{
 }
 
 #overlay-text {
-  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
-}
-
-.loadercontent {
-  font-family: 'Ubuntu', sans-serif;
 }
 
 #genny {
