@@ -34,5 +34,5 @@ var configTemplateCleanSVGBack = "paper-wallet-clean-back.svg";
 document.title = configCoinName+' Paper Wallet';
  
 // Download generator link
-var configDownloadGeneratorEnabled = false;
-var configDownloadGeneratorLink = "";
+var configDownloadGeneratorEnabled = true;
+var configDownloadGeneratorLink = "https://github.com/Limitless-VIP/limitless-paper-wallet/releases";
